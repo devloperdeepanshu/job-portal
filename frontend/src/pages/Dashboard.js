@@ -21,12 +21,12 @@ const Dashboard = () => {
       try {
         if (user?.role === "recruiter") { 
           // Fetch jobs posted by the recruiter
-          const res = await fetch(`http://localhost:5000/api/jobs?recruiterId=${user.id}`);
+          const res = await fetch(`https://job-portal-1-backend.onrender.com/api/jobs?recruiterId=${user.id}`);
           const data = await res.json();
           setJobs(data);
         } else if (user?.role === "jobseeker") {
           // Fetch jobs that the jobseeker has applied to
-          const res = await fetch(`http://localhost:5000/api/jobs/applied-jobs`, {
+          const res = await fetch(`https://job-portal-1-backend.onrender.com/api/jobs/applied-jobs`, {
             headers: { Authorization: `Bearer ${token}` }, // Send token for authentication
           });
           const data = await res.json();

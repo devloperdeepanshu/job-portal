@@ -11,7 +11,7 @@ const JobList = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/jobs");
+        const response = await fetch("https://job-portal-1-backend.onrender.com/api/jobs");
         const data = await response.json();
         setJobs(data);
       } catch (err) {
@@ -46,7 +46,7 @@ const JobList = () => {
   
     try {
       setApplyingJobId(jobId);
-      const res = await fetch(`http://localhost:5000/api/jobs/${jobId}/apply`, {
+      const res = await fetch(`https://job-portal-1-backend.onrender.com/api/jobs/${jobId}/apply`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

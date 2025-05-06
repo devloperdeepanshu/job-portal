@@ -9,7 +9,7 @@ const EditJob = () => {
 
   useEffect(() => {
     const fetchJob = async () => {
-      const res = await fetch(`http://localhost:5000/api/jobs/${id}`);
+      const res = await fetch(`https://job-portal-1-backend.onrender.com/api/jobs/${id}`);
       const data = await res.json();
       setFormData({
         title: data.title,
@@ -27,7 +27,7 @@ const EditJob = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await fetch(`http://localhost:5000/api/jobs/${id}`, {
+      await fetch(`https://job-portal-1-backend.onrender.com/api/jobs/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

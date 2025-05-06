@@ -37,7 +37,7 @@ const ApplyForm = () => {
     formData.append("jobId", id); // Optional: Attach Job ID
 
     try {
-      const response = await fetch("http://localhost:5000/api/apply", {
+      const response = await fetch("https://job-portal-1-backend.onrender.com/api/apply", {
         method: "POST",
         body: formData,
         headers: {
